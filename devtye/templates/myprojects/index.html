@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h3>Project I have done</h3>
+	<ul>
+		{% for project in projects %}
+			<li> 
+				<a href= "{% url 'project_detail' project.id %}">
+					{{ project.title|capfirst }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+  	<a href="#">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>{{ project.title|capfirst }}</h3>
+        <p>{{ project.discription }}</p>
+        Button</a>
+      </div>
+    </div>
+</a>
+  </div>
+</div>
+{% endblock content %}

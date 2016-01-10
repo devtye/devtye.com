@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+	<nav>
+	  <ul class="pager">
+	    <li class="previous"><a href="{% url 'index' %}"><span aria-hidden="true">&larr;</span> Back To Projects</a></li>
+	  </ul>
+	</nav>
+
+	<h3>{{ project.title | capfirst }}</h3>
+	<h4>Description: </h4>
+	<img src = "{{ MEDIA_URL }}{{ project.header }}"/>
+	<p> {{ project.discription }}</p>
+{% endblock%}

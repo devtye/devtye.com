@@ -4,12 +4,24 @@
 
 	<nav>
 	  <ul class="pager">
-	    <li class="previous"><a href="{% url 'index' %}"><span aria-hidden="true">&larr;</span> Back To Projects</a></li>
+	    <li class="previous"><a href="{% url 'index' %}"><span aria-hidden="true"></span> Back To Projects</a></li>
 	  </ul>
 	</nav>
-
 	<h3>{{ project.title | capfirst }}</h3>
 	<h4>Description: </h4>
-	<img src = "{{ MEDIA_URL }}{{ project.header }}"/>
+		{% if project.header != none %}
+			<img src = "{{ MEDIA_URL }}{{ project.header }}"/>
+		{% endif %}
+
 	<p> {{ project.discription }}</p>
+
+	{% if addon_exist == True %}
+	   <h4>{{addon.title}}</h4>
+	   <img src = "{{ MEDIA_URL }}{{ addon.image_1 }}"/>
+	   <p> {{ addon.discription }}</p>
+	{% else %}
+	   <p>{{addon_exist}}</p>
+	{% endif %}
+
+
 {% endblock%}

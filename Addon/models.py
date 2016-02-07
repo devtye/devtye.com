@@ -21,7 +21,7 @@ class Addon(models.Model):
 	sort_index         = models.IntegerField(blank=True,default=1)
 
 	image_visibility   = models.BooleanField()
-	image 		       = models.ImageField(upload_to=get_upload_file_name,blank=True)
+	image 		       = models.FileField(upload_to=get_upload_file_name,blank=True)
 	discription	       = models.TextField(blank=True)
 
 	code_visibility    = models.BooleanField()

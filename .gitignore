@@ -1,5 +1,10 @@
 db.sqlite3
 devtye/settings.py
+devtye/settings.pyc
 media/*
+devtye/media/*
+devtye/media/uploaded_files/project_thumbnail/*
+devtye/media/uploaded_files/project_header/*
+devtye/media/uploaded_files/project_addon/*
 .DS_Store
 */.DS_Store

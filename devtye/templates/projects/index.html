@@ -1,24 +1,21 @@
 {% extends "base.html" %}
 
 {% block content%}
-	<h2>Projects done so far</h2>
-<!-- <div class="row"> -->
- {% for  project in projects %}
-  <div class="col-sm-6 col-md-4">
-  	
-	    <div class="thumbnail">
-	      <img src = "{{ MEDIA_URL }}{{ project.header }}"/>
+<div id="project_view">
+ {% for  project in projects %} 
+   <div class="col-sm-6 col-md-4">
+	    <div class="thumbnails" onload="myFunction()" >
+	      {% if project.tumbnail != none or empty %}
+	      	<img src = "{{ MEDIA_URL }}{{ project.tumbnail }}"/>
+	      {% endif %}
 	      <div class="caption">
 	        <a href="{% url 'project_detail'  project.id %}">
-	        	<h3>{{ project.title|capfirst }}</h3>
+	        	<h4 class= "project_view_headers">{{ project.title|capfirst }}</h4>
 	        </a>
-	        <p>{{ project.discription }}</p>
+	        <!-- <p>{{ project.discription }}</p> -->
 	      </div>
 	    </div>
-	</a>
-  </div>
+	</div>
   {% endfor %}
-<!-- </div> -->
-
-
+</div>
 {% endblock%}

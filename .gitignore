@@ -1,5 +1,6 @@
 db.sqlite3
 devtye/settings.py
+devtye/settings.pyc
 media/*
 devtye/media/*
 devtye/media/uploaded_files/project_thumbnail/*

@@ -9,28 +9,25 @@ def get_upload_file_name(instance,filename):
 
 # Create your models here.
 class Addon(models.Model):
+	javascript = 'javascript'
+	css = 'css'
+	html = 'markup'
+	php = 'php'
+	python = 'python'
+	code_lang = ((javascript, 'javascript'),(html, 'markup'),(css, 'css'),(php,'php'),(python,'python'))
 
-	visibility_bool = (
-       (True, 'Show'),
-       (False, 'Hide'),
-    )
+	title              = models.CharField(max_length=500)
+	project_hook       = models.IntegerField()
+	sort_index         = models.IntegerField(blank=True,default=1)
 
-	title = models.CharField(max_length=500)
-	project_hook = models.IntegerField()
+	image_visibility   = models.BooleanField()
+	image 		       = models.ImageField(upload_to=get_upload_file_name,blank=True)
+	discription	       = models.TextField(blank=True)
 
-	image_1_visibility = models.BooleanField()
-	image_1 		   = models.ImageField(upload_to=get_upload_file_name)
-	discription_1	   = models.TextField(blank=True)
+	code_visibility    = models.BooleanField()
+	type_of_code	   = models.CharField(max_length=20, choices=code_lang, default=html)
+	pre_block	       = models.TextField(blank=True)
+	code_block	       = models.TextField(blank=True)
+	post_block		   = models.TextField(blank=True)
 
-	image_2_visibility = models.BooleanField()
-	image_2 		   = models.ImageField(upload_to=get_upload_file_name)
-	discription_2	   = models.TextField(blank=True)
-
-	image_3_visibility = models.BooleanField()
-	image_3 		   = models.ImageField(upload_to=get_upload_file_name)
-	discription_3	   = models.TextField(blank=True)
-
-	image_4_visibility = models.BooleanField()	
-	image_4 		   = models.ImageField(upload_to=get_upload_file_name)
-	discription_4	   = models.TextField(blank=True)
 

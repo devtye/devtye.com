@@ -1,27 +1,62 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block content%}
+	
+	<div class="wrapper">
 
-	<nav>
-	  <ul class="pager">
-	    <li class="previous"><a href="{% url 'index' %}"><span aria-hidden="true"></span> Back To Projects</a></li>
-	  </ul>
-	</nav>
-	<h3>{{ project.title | capfirst }}</h3>
-	<h4>Description: </h4>
+
 		{% if project.header != none %}
-			<img src = "{{ MEDIA_URL }}{{ project.header }}"/>
+			<div class="header_cls fade_elem">
+				<img class="img-responsive" src = "{{ MEDIA_URL }}{{ project.header }}"/>
+				<h1 class= "project_header" >{{ project.title | capfirst }}</h1>
+			</div>
 		{% endif %}
 
-	<p> {{ project.discription }}</p>
-
-	{% if addon_exist == True %}
-	   <h4>{{addon.title}}</h4>
-	   <img src = "{{ MEDIA_URL }}{{ addon.image_1 }}"/>
-	   <p> {{ addon.discription }}</p>
-	{% else %}
-	   <p>{{addon_exist}}</p>
-	{% endif %}
 
 
+
+			
+		<div class="addon_wrapper fade_elem">
+			<p> {{ project.discription }}</p>
+			<!--Addons make sure there are images and checked visibility  -->
+			{% for  addon in addons %} 
+				{% if addon_exist == True %}
+					{% if addon_exist == True %}
+				   		<h4>{{addon.title}}</h4>
+				   		{% if addon.image != "" and addon.image_visibility == True %}
+				   				<img class="img-responsive images" src = "{{ MEDIA_URL }}{{ addon.image}}"/>
+				   				<p> {{ addon.discription_1 }}</p>
+				   		{% endif %}
+
+				   		{% if addon.code_block != "" and addon.code_visibility == True  %}
+				   			{% if addon.pre_block != "" %}
+				   				<p> {{ addon.pre_block }}</p>
+				   			{% endif %}
+
+				   			<pre class="code_set language-{{addon.type_of_code}}" >
+				   				<code class="language-{{addon.type_of_code}}">{{addon.code_block}}</code>
+				   			</pre>
+
+							{% if addon.post_block != "" %}
+				   				<p> {{ addon.post_block }}</p>
+				   			{% endif %}
+
+				   		{% endif %}
+
+				  	{% endif %}	 
+
+				{% endif %}
+
+		  {% endfor %}
+	 	 </div>
+ 	</div>
+
+		<nav>
+		  <ul class="pager">
+		    <li class="previous"><a href="{% url 'index' %}"><span aria-hidden="true"></span> Back To Projects</a></li>
+		  </ul>
+		</nav>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="{% static 'js/prism.js' %}"></script>
+	<script src="{% static 'js/project_detail.js' %}"></script>
 {% endblock%}

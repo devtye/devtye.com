@@ -8,10 +8,12 @@ function myFunction(){
 		thumbnails[i].style.transitionDelay = delay + "s";
 		thumbnails[i].style.opacity = "1";
 		console.log(delay);
-		delay += 0.35;
+		delay += 0.30;
 	};
+	
 }
 
 
+document.addEventListener('DOMContentLoaded', myFunction);
 
-document.addEventListener('DOMContentLoaded', myFunction, false);
+

@@ -1,6 +1,20 @@
-body { padding-top: 70px; padding-left: 5%; padding-right: 5%;}
+body{
+	padding-top: 50px;
+	width: 100%;
+	height: 100%;
+}
 
-.thumbnails{
+
+
+.navbar-default {
+    border-color: #e7e7e7;
+}
+
+
+
+/*#### Project List ##############*/
+
+.thumbnails, .fade_elem{
 	/*opacity: 0;*/
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-in;
@@ -17,4 +31,57 @@ body { padding-top: 70px; padding-left: 5%; padding-right: 5%;}
 
 .thumbnails:hover { 
     /*background-color: yellow;*/
+}
+
+.header_cls{
+	position: relative;
+	background: rgba(0,0,0,1);
+}
+
+.project_header {
+	display: inline-block;
+    text-align: left;
+    padding: 2vw 2vw 2vw 6vw;
+    margin: 0;
+    width: 100;
+    color: white;
+}
+
+h3.project_view_headers {
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+
+
+/*#### Project View ##############*/
+
+
+.addon_wrapper{
+	width: 90vw;
+	margin: 5%;
+}
+
+.project_header{
+	text-align: center;
+	/*height: 100vh;*/
+}
+
+.header_box{
+	
+}
+
+#project_view{ 
+	width: 100%;
+	padding-left: 5%; 
+	padding-right: 5%;
+	margin: 20px 0;
+	height: 100%;
+}
+
+
+.code_set{
+	max-height: 50vh;
+	white-space: nowrap;
+	margin: 1% 3%!important;
 }

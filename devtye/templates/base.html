@@ -6,17 +6,24 @@
 		<title>Project Overhead</title>
 		<meta="description" content="">
 		<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"></link>
+		<link rel="stylesheet" href="{% static 'css/prism.css' %}"></link>
 		<link rel="stylesheet" href="{% static 'css/main.css' %}"></link>
 	<head>
 	<body>
 		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-		  	
+		  <div class="container-fluid">
+		  	<a class="navbar-brand" href="{% url 'index' %}">DevTye</a>
+    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav">
+		  			<li><a href="{% url 'index' %}">Projects</a></li>
+		  			<li><a href="{% url 'index' %}">About Me</a></li>
+		  			<li><a href="{% url 'index' %}">Resume</a></li>
+		  		<ul>
 		  </div>
 		</nav>
+
 		{% block content %}
 		{% endblock content %}
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="{% static 'js/main.js' %}"></script>
 	</body>
 </html>

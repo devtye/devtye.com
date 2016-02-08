@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import Http404
 
-from Projects.models import Project
-from Addon.models import Addon
+from Projects.models import Project, Addon
+#from Addon.models import Addon
 
 def index(request):
 	projects = Project.objects.all()  

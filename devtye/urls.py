@@ -18,13 +18,16 @@ from django.conf.urls import patterns
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from Resume.views import resume_view
 from Projects import views
+
 
 urlpatterns = [
     ##url(r'^admin/', admin.site.urls),
     url(r'^mydevtye/', admin.site.urls),
     url(r'^$', views.index, name="index"),
     url(r'^project/(?P<id>\d+)/',views.project_detail, name="project_detail"),
+    url(r'^resume/', resume_view, name="resume_view"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

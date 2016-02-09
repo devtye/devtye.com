@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content%}
+	<div id="resume_wrapper">
+
+		<h2>Skills:</h2>
+		<div id= "skill_wrapper">
+		 {% for skill in skills %} 
+		 	<p>{{skill.title}}<p>
+		  {% endfor %}
+		</div>
+
+
+		<h2>Professional Experience:</h2>
+		<div id= "professional_experience_wrapper">
+		 {% for experience in professional_experience %} 
+		 	<h4 class="col-sm-6 resume_title">{{experience.title}} - {{experience.company_name}}</h4>
+		 	{% if experience.currently_working == True %}
+		 		<h4 class="col-sm-6 resume_date">{{experience.start_month}} {{experience.start_year}} - Current </h4>
+			{% else %}
+				<h4 class="col-sm-6 resume_date">{{experience.start_month}} {{experience.start_year}} - {{experience.end_month}}, {{experience.end_year}} </h4>
+		 	{% endif %}
+		 	<p class="resume_des">{{experience.career_discription}}<p>
+		  {% endfor %}
+		</div>
+
+		<h2>Education:</h2>
+		<div id= "professional_experience_wrapper">
+		 {% for school in schools %} 
+		 	<h4 class="col-sm-6 resume_title">{{school.title}}</h4>
+		 	<h4 class="col-sm-6 resume_date">{{school.graduate_month}} {{school.graduate_year}}</h4>
+		 	<p class="resume_des">{{school.school_name}}<p>
+		  {% endfor %}
+		</div>
+
+
+
+	</div>
+{% endblock%}

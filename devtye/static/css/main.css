@@ -43,7 +43,7 @@ body{
     text-align: left;
     padding: 2vw 2vw 2vw 6vw;
     margin: 0;
-    width: 100;
+    width: 100%;
     color: white;
 }
 
@@ -84,4 +84,23 @@ h3.project_view_headers {
 	max-height: 50vh;
 	white-space: nowrap;
 	margin: 1% 3%!important;
+}
+
+
+
+
+#resume_wrapper{
+	width: 90vw;
+	margin: 0 5%;
+}
+
+.resume_date, .resume_title{
+	padding: 0px;
+}
+
+ .resume_date{
+	text-align: right;
+}
+.resume_des{
+	clear:both;
 }

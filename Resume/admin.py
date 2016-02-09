@@ -8,11 +8,13 @@ class SkillsAdmin(admin.ModelAdmin):
 
 class ProfessionalExperienceAdmin(admin.ModelAdmin):
     #fields = ('title','discription')
-    list_display = ['title','company_name','start_date','end_date']
+    #list_display = ['title','company_name','start_month','start_year','end_month','end_year']
+    list_display = ['title','company_name']
 
 class EducationAdmin(admin.ModelAdmin):
     #fields = ('title','discription')
-    list_display = ['title','school_name','graduate_date']
+    #list_display = ['title','school_name','graduate_month','graduate_year']
+    list_display = ['title','school_name']
 
 admin.site.register(Education, EducationAdmin)
 admin.site.register(ProfessionalExperience, ProfessionalExperienceAdmin)

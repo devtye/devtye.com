@@ -5,25 +5,38 @@
 		<meta charset="utf-8">
 		<title>Project Overhead</title>
 		<meta="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"></link>
+		<link rel="stylesheet" href="{% static 'bootstrap/css/flatly.min.css' %}"></link>
 		<link rel="stylesheet" href="{% static 'css/prism.css' %}"></link>
 		<link rel="stylesheet" href="{% static 'css/main.css' %}"></link>
 	<head>
 	<body>
+		<script src="{% static 'js/prism.js' %}"></script>
 		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container-fluid">
-		  	<a class="navbar-brand" href="{% url 'index' %}">DevTye</a>
-    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      			<ul class="nav navbar-nav">
+		  	<div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		  		<a class="navbar-brand" href="{% url 'index' %}">.dev{Tye}</a>
+		  	</div>
+		  	<div class="collapse navbar-collapse" id="main_nav">
+	  			<ul class="nav navbar-nav">
 		  			<li><a href="{% url 'index' %}">Projects</a></li>
 		  			<li><a href="{% url 'index' %}">About Me</a></li>
 		  			<li><a href="{% url 'resume_view' %}">Resume</a></li>
 		  		<ul>
-		  </div>
+		  	</div>
 		</nav>
 
 		{% block content %}
 		{% endblock content %}
-		<script src="{% static 'js/main.js' %}"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	 <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+	 <script src="{% static 'js/main.js' %}"></script>
 	</body>
 </html>

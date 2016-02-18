@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404
-
+import re
 from Projects.models import Project, Addon
 #from Addon.models import Addon
 
@@ -16,7 +16,11 @@ def project_detail(request, id):
 		project = Project.objects.get(id=id)
 		addons = Addon.objects.filter(project_hook=id)
 		addon_exist = True
-		print(addons)
+		#print(addons)
+		for addon in addons:
+			print addon.code_block
+
+
 
 	except Project.DoesNotExist:
 		raise Http404('This item does not exist')

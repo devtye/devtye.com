@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-	<a href= "{% url 'index' %}"> Back overall projects </a>
-	<h3> {{ project.title|capfirst }} </h3>
-	<img scr= "{% url 'project.upload' %}" />
-	<h4> Description: </h4>
-	<p> {{ project.description }} </p>
-
-{% endblock content %}

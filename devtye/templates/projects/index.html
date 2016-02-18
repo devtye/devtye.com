@@ -3,10 +3,13 @@
 {% block content%}
 <div id="project_view">
  {% for  project in projects %} 
-   <div class="col-sm-6 col-md-4">
+   <div class="col-sm-6 col-md-4 thumbnail_pack">
 	    <div class="thumbnails" onload="myFunction()" >
 	      {% if project.tumbnail != none or empty %}
+	      <div class="tumb_img">
 	      	<img src = "{{ MEDIA_URL }}{{ project.tumbnail }}"/>
+	      	<!-- <div class="tumb_des"></div> -->
+	      </div>
 	      {% endif %}
 	      <div class="caption">
 	        <a href="{% url 'project_detail'  project.id %}">
@@ -14,6 +17,7 @@
 	        </a>
 	        <!-- <p>{{ project.discription }}</p> -->
 	      </div>
+	      
 	    </div>
 	</div>
   {% endfor %}

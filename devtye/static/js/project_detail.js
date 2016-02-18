@@ -8,9 +8,13 @@ function myFunction(){
 		detail_child[i].style.transitionDelay = delay + "s";
 		detail_child[i].style.opacity = "1";
 		console.log(delay);
-		delay += 0.20;
+		delay += 0.10;
 	};
 	
 }
+
+Prism.highlightAll()
+
+
 
 document.addEventListener('DOMContentLoaded', myFunction, false);
